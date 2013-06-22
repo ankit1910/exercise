@@ -1,0 +1,107 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>
+		html exercise
+	</title>
+</head>
+<body>
+	<div id="box" style="background:#D8D8D8;">
+		<div id="form">  	
+			<form id="f1" action="submit.htm" method="get" >
+				<h1 align="center">
+					HTML form exerise
+				</h1>
+				<br /> <br />
+					<span style="color:red">Please note:</span>This Example demonstrate how HTML forms can be used. Submit button should submit the form and reset button should reset the form(revert the changes in form fields).the form layout should be the same as below.
+				
+				<h3> 
+					&nbsp &nbsp &nbsp Contact form
+				</h3>
+				<table>
+					<tr>
+						<td> Your name*: </td>
+						<td><input type="text" name="text1" autofocus /> </td>
+					</tr>
+
+					<tr>
+						<td> E-mail*: </td>
+						<td> <input type="text" name="text1" style="background-color:yellow"/> </td>
+					</tr>
+
+					<tr>
+						<td> Phone number: </td>
+						<td> <input type="text" name="text1" maxlength="10" style="background-color:yellow" /> </td>
+					</tr>
+
+					<tr>
+						<td> Website*:	</td>
+						<td> <input type="text" name="text1" value="http://" size="35"  /> </td>
+					</tr>
+				</table>
+					Commments*:  <br />
+						<textarea rows="8" cols="25">
+						</textarea> 
+				<h3>
+					Text Field
+				</h3>
+						Your name: <input type="text" name="text1" style="background-color:yellow" /> 
+				<h3>
+					Password field
+				</h3> 
+						Password: <input type="password" name="text1"  />  
+				<h3>
+					Radio buttons
+				</h3> 
+						Do you like pizza?  <br />
+						<input type="radio" name="pizza" value="yes" checked>Yes   <br />
+						<input type="radio" name="pizza" value="no">No	<br />
+						<input type="radio" name="pizza" value="maybe">Maybe   <br />
+						<input type="radio" name="pizza" value="never tried">Never 
+				<h3>
+					Check Box
+				</h3>
+						<input type="checkbox" name="" value="ck">Check this box if you like our service <br>
+
+				<h3>
+					Text Area
+				</h3>
+					Anything you would like to say?   <br />
+						<textarea rows="5" cols="37">
+						</textarea> 
+
+				<h3>
+					I Like
+				</h3>
+					<select name="like" size="4" multiple>
+  						<option value="mushrooms">mushrooms</option>
+  						<option value="apples">apples</option>
+  						<option value="olives">olives</option>
+  						<option value="corn">corn</option>
+
+  				<h3>
+					Menu
+				</h3>
+					<select>
+  						<option value="red">red</option>
+  						<option value="yellow">yellow</option>
+  
+					</select>
+
+				<h3>
+					Attach file
+				</h3>
+					<INPUT TYPE="file" NAME="attachedfile" MAXLENGTH=50 ALLOW="text/*" > 
+
+
+				<h3>
+					Buttons
+				</h3>
+					<button type="submit">submit</button>
+					<button type="reset">reset</button>
+
+				</form>
+			</div>
+		</div>	
+	</body>
+</html>
