@@ -1,0 +1,504 @@
+1.Create a repository
+ans: 	vinsol@vinsol-dell-1525-silver ~ $ sudo -s
+	[sudo] password for vinsol: 
+
+	vinsol-dell-1525-silver ~ # mkdir track		//make a directory
+	vinsol-dell-1525-silver ~ # cd track
+	vinsol-dell-1525-silver track # git init	//initialize the git
+		Initialized empty Git repository in /home/vinsol/track/.git/
+
+
+2.Make some changes -- add some files, change content of some files.
+ans:	vinsol-dell-1525-silver track # touch test.txt test1.txt test2.txt		// creating files
+	
+	vinsol-dell-1525-silver track # echo "hii how are you" > test.txt		// writing into files
+	vinsol-dell-1525-silver track # echo "i m fine" > test1.txt
+	vinsol-dell-1525-silver track # echo "ooohh its great" > test2.txt
+	
+	vinsol-dell-1525-silver track # cat test2.txt					// showing the content of file
+	ooohh its great
+	vinsol-dell-1525-silver track # echo "ho w about you" >> test.txt		//making changes.
+	vinsol-dell-1525-silver track # cat test.txt
+	hii how are you
+	ho w about you
+
+3.commit changes
+ans: 	vinsol-dell-1525-silver track # git add --all					//adding files to staging area
+	vinsol-dell-1525-silver track # git status					// getting status
+		# On branch master
+		#
+		# Initial commit
+		#
+		# Changes to be committed:
+		#   (use "git rm --cached <file>..." to unstage)
+		#
+		#	new file:   test.txt
+		#	new file:   test1.txt
+		#	new file:   test2.txt
+		#
+	vinsol-dell-1525-silver track # git commit -m "new files added"			//commit the changes
+		[master (root-commit) 5f3eaa5] new files added
+		 Committer: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525- silver.(none)>
+		Your name and email address were configured automatically based
+		on your username and hostname. Please check that they are accurate.
+		You can suppress this message by setting them explicitly:
+
+		    git config --global user.name "Your Name"
+		    git config --global user.email you@example.com
+
+		After doing this, you may fix the identity used for this commit with:
+
+		    git commit --amend --reset-author
+
+		 3 files changed, 4 insertions(+)
+		 create mode 100644 test.txt
+		 create mode 100644 test1.txt
+		 create mode 100644 test2.txt
+
+
+4.repeat steps 1-3 for 2 more times. try to remove and ignore some files . Use git diff before each commit.
+ans:	vinsol-dell-1525-silver ~ # mkdir repo1     			// making directory
+	vinsol-dell-1525-silver ~ # cd repo1
+
+	vinsol-dell-1525-silver repo1 # git init
+	Initialized empty Git repository in /home/vinsol/repo1/.git/
+
+	vinsol-dell-1525-silver repo1 # echo "file1" > file1.txt		// writing into files
+	vinsol-dell-1525-silver repo1 # echo "file2" > file2.txt
+	vinsol-dell-1525-silver repo1 # echo "file3" > file3.txt
+	
+	vinsol-dell-1525-silver repo1 # ls
+	file1.txt  file2.txt  file3.txt							//listing files
+
+	vinsol-dell-1525-silver repo1 # git add --all					// adding to staging area
+	vinsol-dell-1525-silver repo1 # git status					// getting status of staging area
+		# On branch master
+		#
+		# Initial commit
+		#
+		# Changes to be committed:
+		#   (use "git rm --cached <file>..." to unstage)
+		#
+		#	new file:   file1.txt
+		#	new file:   file2.txt
+		#	new file:   file3.txt
+		#
+
+	vinsol-dell-1525-silver repo1 # echo "file2 is modified" > file2.txt
+	vinsol-dell-1525-silver repo1 # rm file1.txt                     		 //file is removed from directory
+
+	vinsol-dell-1525-silver repo1 # git diff
+		diff --git a/file1.txt b/file1.txt
+		deleted file mode 100644
+		index e212970..0000000
+		--- a/file1.txt
+		+++ /dev/null
+		@@ -1 +0,0 @@
+		-file1
+		diff --git a/file2.txt b/file2.txt
+		index 6c493ff..d418311 100644
+		--- a/file2.txt
+		+++ b/file2.txt
+		@@ -1 +1 @@
+		-file2
+		+file2 is modified
+
+	vinsol-dell-1525-silver repo1 # git commit -m "new files"				// committing the changes
+	[master (root-commit) dee70cc] new files
+	 Committer: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+	Your name and email address were configured automatically based
+	on your username and hostname. Please check that they are accurate.
+	You can suppress this message by setting them explicitly:
+
+	    git config --global user.name "Your Name"
+	    git config --global user.email you@example.com
+
+	After doing this, you may fix the identity used for this commit with:
+
+	    git commit --amend --reset-author
+
+	 3 files changed, 3 insertions(+)
+	 create mode 100644 file1.txt      						 // since the file1 is added to staging area it has been commited
+	 create mode 100644 file2.txt
+	 create mode 100644 file3.txt
+	
+	vinsol-dell-1525-silver repo1 # ls 
+	file2.txt  file3.txt     							 //deleted from repo1
+
+
+5.create changes and revert those changes using git when those changes are not added to staging are
+ans :	vinsol-dell-1525-silver repo2 # cat final.txt
+	master
+	vinsol-dell-1525-silver repo2 # echo "not staged" >final.txt			//making changes in file
+	
+	vinsol-dell-1525-silver repo2 # git diff					// displaying the status
+	diff --git a/final.txt b/final.txt
+	index 1f7391f..e872134 100644
+	--- a/final.txt
+	+++ b/final.txt
+	@@ -1 +1 @@
+	-master							// line deleted
+	+not staged						// line added
+	
+	vinsol-dell-1525-silver repo2 # git checkout -- final.txt		//reverting  the changes
+	
+	vinsol-dell-1525-silver repo2 # git diff				// no diff status
+	   
+
+
+6.create changes and revert those changes after adding changes to staging area	
+ans:	vinsol-dell-1525-silver repo2 # cat final.txt		
+	feature
+	vinsol-dell-1525-silver repo2 # echo "changed" >final.txt
+	
+	vinsol-dell-1525-silver repo2 # git diff
+		diff --git a/final.txt b/final.txt
+		index a7453f0..5ea2ed4 100644
+		--- a/final.txt
+		+++ b/final.txt
+		@@ -1 +1 @@
+		-feature
+		+changed
+	vinsol-dell-1525-silver repo2 # git add final.txt     //stage the changes
+
+	vinsol-dell-1525-silver repo2 # git diff
+
+	
+	vinsol-dell-1525-silver repo2 # git status     // it shows that there are changes in file that has to commit
+		# On branch master
+		# Changes to be committed:
+		#   (use "git reset HEAD <file>..." to unstage)
+		#
+		#	modified:   final.txt
+		#
+	
+	vinsol-dell-1525-silver repo2 # git reset HEAD final.txt 		//	unstage the changes
+	Unstaged changes after reset:
+	M	final.txt
+
+	
+7.create change and revert those changes after committing those changes 
+ans:	vinsol-dell-1525-silver repo2 # echo "reverse commiting changes" > final.txt
+	
+	vinsol-dell-1525-silver repo2 # git commit -a -m "modifi final"				// commiting the changes skiping status
+		[master f45e55c] modifi final
+		 Committer: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+		Your name and email address were configured automatically based
+		on your username and hostname. Please check that they are accurate.
+		You can suppress this message by setting them explicitly:
+
+		    git config --global user.name "Your Name"
+		    git config --global user.email you@example.com
+
+		After doing this, you may fix the identity used for this commit with:
+
+		    git commit --amend --reset-author
+
+		 1 file changed, 1 insertion(+), 1 deletion(-)
+
+	vinsol-dell-1525-silver repo2 # cat final.txt					//reflecting changes in file final.txt
+	reverse commiting changes
+	
+	vinsol-dell-1525-silver repo2 # git reset --hard HEAD^				//reset to previous commit 
+	HEAD is now at 48c5d35 master
+	
+	vinsol-dell-1525-silver repo2 # cat final.txt					//reversed the changes 
+	master
+
+8.Check repository status before adding changes to staging area, after adding changes to staging area and after committing changes .
+ans:   vinsol-dell-1525-silver repo2 # ls
+	final.txt  test.txt
+	
+	vinsol-dell-1525-silver repo2 # git status				// before adding to staging area
+		# On branch master
+		# Untracked files:
+		#   (use "git add <file>..." to include in what will be committed)
+		#
+		#	test.txt
+		nothing added to commit but untracked files present (use "git add" to track)
+
+	vinsol-dell-1525-silver repo2 # git add test.txt			//after adding to staging area
+	vinsol-dell-1525-silver repo2 # git status
+		# On branch master
+		# Changes to be committed:
+		#   (use "git reset HEAD <file>..." to unstage)
+		#
+		#	new file:   test.txt
+		#
+
+
+	vinsol-dell-1525-silver repo2 # git commit -m "made changes"         //after making commit
+		[master e6918ad] made changes
+		 Committer: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+		Your name and email address were configured automatically based
+		on your username and hostname. Please check that they are accurate.
+		You can suppress this message by setting them explicitly:
+
+		    git config --global user.name "Your Name"
+		    git config --global user.email you@example.com
+
+		After doing this, you may fix the identity used for this commit with:
+	
+		    git commit --amend --reset-author
+
+		 1 file changed, 1 insertion(+)
+		 create mode 100644 test.txt
+
+
+	vinsol-dell-1525-silver repo2 # git status			//  status after commit
+	# On branch master
+	nothing to commit (working directory clean)
+
+
+
+9.Display all the commits
+ans: 	vinsol-dell-1525-silver repo2 # git log
+	
+	commit e6918ad590df9528ab227df15986fc07f69577c2
+	Author: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+	Date:   Fri Jun 21 13:08:30 2013 +0530
+
+	    made changes
+
+	commit ea805ba5b5799c5402abcfb33cae4f9212036801
+	Author: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+	Date:   Fri Jun 21 13:05:24 2013 +0530
+
+	    changed
+
+	commit 8c3708386028c18a72948340a0809ac6120aea11
+	Author: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+	Date:   Fri Jun 21 12:54:18 2013 +0530
+
+	    new files
+
+10.Display a specific commit
+ans:	vinsol-dell-1525-silver repo2 # git log --until=1.minute.ago
+
+	commit e6918ad590df9528ab227df15986fc07f69577c2
+	Author: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+	Date:   Fri Jun 21 13:08:30 2013 +0530
+
+	    made changes
+	
+	commit ea805ba5b5799c5402abcfb33cae4f9212036801
+	Author: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+	Date:   Fri Jun 21 13:05:24 2013 +0530
+	
+	    changed
+
+	commit 8c3708386028c18a72948340a0809ac6120aea11
+	Author: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+	Date:   Fri Jun 21 12:54:18 2013 +0530
+	
+	    new files
+
+
+11.create branches called "feature1" and "feature2" from master. 11 . Delete branch "feature2"
+ans:	vinsol-dell-1525-silver repo2 # git branch feature1				//creating branch
+	vinsol-dell-1525-silver repo2 # git branch feature2
+	
+	vinsol-dell-1525-silver repo2 # git branch
+	  feature1
+	  feature2
+	* master
+	
+	vinsol-dell-1525-silver repo2 # git branch -d feature2				//deleting branch
+	Deleted branch feature2 (was e6918ad).
+
+	vinsol-dell-1525-silver repo2 # git branch
+	  feature1
+	* master
+
+
+12.Make some commits on "feature1"
+ans:	vinsol-dell-1525-silver repo2 # git checkout feature1			//puting head to feature1 branch
+	Switched to branch 'feature1'
+	
+	vinsol-dell-1525-silver repo2 # echo "modified by branch" > final.txt
+
+	vinsol-dell-1525-silver repo2 # git add final.txt			//adding to staging area
+
+	vinsol-dell-1525-silver repo2 # git commit -m "creat file on branch"	// commiting 
+		[feature1 6cda230] creat file on branch
+		 Committer: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+		Your name and email address were configured automatically based
+		on your username and hostname. Please check that they are accurate.
+		You can suppress this message by setting them explicitly:
+
+		    git config --global user.name "Your Name"
+		    git config --global user.email you@example.com
+
+		After doing this, you may fix the identity used for this commit with:
+
+		    git commit --amend --reset-author
+
+		 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+13.Make some commits on branch "master".
+ans :	vinsol-dell-1525-silver repo2 # git checkout master		//putting head to master branch
+	Switched to branch 'master'
+
+	vinsol-dell-1525-silver repo2 # echo "modified by master" > final.txt
+	
+	vinsol-dell-1525-silver repo2 # git add final.txt
+
+	vinsol-dell-1525-silver repo2 # git commit -m "creat file on master"
+		[master d07b26e] creat file on master
+		 Committer: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+		Your name and email address were configured automatically based
+		on your username and hostname. Please check that they are accurate.
+		You can suppress this message by setting them explicitly:
+	
+		    git config --global user.name "Your Name"
+		    git config --global user.email you@example.com
+	
+		After doing this, you may fix the identity used for this commit with:
+	
+		    git commit --amend --reset-author
+	
+		 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+
+14.merge branch "feature1" in "master" (make some conflicts by changing same file on same line in both the branches).
+
+ans:	vinsol-dell-1525-silver repo2 # git merge feature1   			// merging branch with master
+		Auto-merging final.txt						// conflict arrises
+		CONFLICT (content): Merge conflict in final.txt
+		Automatic merge failed; fix conflicts and then commit the result.
+	
+	vinsol-dell-1525-silver repo2 # vi final.txt      //open vi editor and make final cahnges and resolve conflict
+	
+	vinsol-dell-1525-silver repo2 # cat final.txt
+	modified by master
+
+	vinsol-dell-1525-silver repo2 # git commit -a
+
+
+
+15 create branch "feature2" from master and Make some commits on "feature2".
+
+ans:	vinsol-dell-1525-silver repo2 # git checkout -b feature2		
+		Switched to a new branch 'feature2'
+	
+	vinsol-dell-1525-silver repo2 # echo "feature" >final.txt
+
+	vinsol-dell-1525-silver repo2 # git add final.txt				//ADDING TO STAGING AREA
+
+	vinsol-dell-1525-silver repo2 # git commit -m "branch"				//commitng
+		[feature2 f217ccc] branch
+		 Committer: ankit.bansal001@yahoo.comclear <root@vinsol-dell-1525-silver.(none)>
+		Your name and email address were configured automatically based
+		on your username and hostname. Please check that they are accurate.
+		You can suppress this message by setting them explicitly:
+
+		    git config --global user.name "Your Name"
+		    git config --global user.email you@example.com
+
+		After doing this, you may fix the identity used for this commit with:
+
+		    git commit --amend --reset-author
+
+		 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+16.Make some commits on branch "master"
+ans:	vinsol-dell-1525-silver repo2 # git checkout master
+		Switched to branch 'master'
+	
+	vinsol-dell-1525-silver repo2 # echo "master" >final.txt
+
+	vinsol-dell-1525-silver repo2 # git add final.txt				//ADDING TO STAGING AREA
+
+	vinsol-dell-1525-silver repo2 # git commit -m "master"				//commitng
+		# On branch master
+		nothing to commit (working directory clean)	
+	
+17.rebase branch "master" in "feature2" (make some conflicts by changing same file on same line in both the branches) .
+ans:	vinsol-dell-1525-silver repo2 # git checkout feature2
+		Switched to branch 'feature2'
+
+	vinsol-dell-1525-silver repo2 # git rebase master		//putting all commits one after another
+		Current branch feature2 is up to date.
+
+	vinsol-dell-1525-silver repo2 # git checkout master		//Switched to branch 'master'
+		Switched to branch 'master'
+
+	vinsol-dell-1525-silver repo2 # git merge feature2
+		Updating 48c5d35..f217ccc
+		Fast-forward
+		 final.txt |    2 +-
+		 1 file changed, 1 insertion(+), 1 deletion(-)
+	
+	vinsol-dell-1525-silver repo2 # cat final.txt			//the changes are reflected without any conflict
+	feature
+
+	
+
+18.find the differences between "merge" and "rebase" in above cases.
+  ans: merge
+       a. in merge we have to resolve conflict made by different user.
+		i. by opening file in vi editor 
+		ii. by saving the desired changes and commiting them
+
+	rebase
+	a. in rebase v dont resolve conflicts 
+		i.   the commit made by branch is stored temporary
+		ii.  then  the commits made by master branch is executed
+		iii. then commits made by the branch is executed.
+		iv.  its like commits made one afte another.
+
+
+19.Use git stash
+ans:	vinsol-dell-1525-silver repo2 # cat final.txt
+	modified by branch
+	
+	vinsol-dell-1525-silver repo2 # vi final.txt  			 //here text is changed to "feature"
+
+	vinsol-dell-1525-silver repo2 # git status			//getting the status
+		# On branch feature1
+		# Changes not staged for commit:
+		#   (use "git add <file>..." to update what will be committed)
+		#   (use "git checkout -- <file>..." to discard changes in working directory)
+		#
+		#	modified:   final.txt
+		#
+		no changes added to commit (use "git add" and/or "git commit -a")
+		
+	vinsol-dell-1525-silver repo2 # git stash			//putting changes on stash
+		Saved working directory and index state WIP on feature1: 6cda230 creat file on branch
+		HEAD is now at 6cda230 creat file on branch
+	
+	vinsol-dell-1525-silver repo2 # git status			// now changes are not reflected in status
+		# On branch feature1
+		nothing to commit (working directory clean)
+	
+	vinsol-dell-1525-silver repo2 # cat final.txt
+		modified by branch
+	
+	vinsol-dell-1525-silver repo2 # git checkout master		//changes are not reftectd in file
+		Switched to branch 'master'
+
+	vinsol-dell-1525-silver repo2 # git stash appply     	//remove stash effect
+		Usage: git stash list [<options>]
+		   or: git stash show [<stash>]
+		   or: git stash drop [-q|--quiet] [<stash>]
+		   or: git stash ( pop | apply ) [--index] [-q|--quiet] [<stash>]
+		   or: git stash branch <branchname> [<stash>]
+		   or: git stash [save [--patch] [-k|--[no-]keep-index] [-q|--quiet]
+				       [-u|--include-untracked] [-a|--all] [<message>]]
+		   or: git stash clear
+	
+	vinsol-dell-1525-silver repo2 # cat final.txt		//changed text appeared
+		feature
+
+
+
+
+
+
+
+
+
