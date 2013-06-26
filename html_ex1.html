@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+     <title>
+      html exercise
+    </title>
+  </head>
+   <body>
+     <div id="box" style="background:#D8D8D8;">
+      <div id="form">
+        <form action="submit.htm" method="get" >
+          <h1 align="center">
+          HTML form exerise
+          </h1>
+          <p></p>
+          <div>
+            <span style="color:red">Please note:</span>This Example demonstrate how HTML forms can be used. Submit button should submit the form and reset button should reset the form(revert the changes in form fields).the form layout should be the same as below.
+          </div>
+
+          <h3>
+          <blockquote>Contact form
+          </blockquote>
+          </h3>
+          <table>
+            <tr>
+              <td> Your name*:
+              </td>
+              <td><input type="text" name="y_name" />
+            </td>
+          </tr>
+          <tr>
+            <td> E-mail*:
+            </td>
+            <td> <input type="text" name="e_mail" style="background-color:yellow"/>
+          </td>
+        </tr>
+        <tr>
+          <td> Phone number: </td>
+          <td> <input type="text" name="p_num" maxlength="10" style="background-color:yellow" /> </td>
+        </tr>
+        <tr>
+          <td> Website*:  </td>
+          <td> <input type="text" name="website" value="http://" size="35"  /> </td>
+        </tr>
+      </table>
+      <p>Commments*:</p>  
+      <textarea rows="8" cols="25">
+      </textarea>
+      <h3>
+      Text Field
+      </h3>
+      Your name: <input type="text" name="text_field" style="background-color:yellow" />
+      <h3>
+      Password field
+      </h3>
+      Password: <input type="password" name="pass"  />
+      <h3>
+      Radio buttons
+      </h3>
+      <p>Do you like pizza?</p>  
+      <p>
+        <input type="radio" name="pizza" id="yes" value="yes" checked>
+        <label for="yes">Yes</label>
+      </p> 
+      <p>
+        <input type="radio" name="pizza" id="no" value="no">
+        <label for="no">No</label> 
+      </p>     
+
+      <p>
+        <input type="radio" name="pizza" id="maybe" value="maybe">
+        <label for="maybe">Maybe</label>
+      </p>
+      <input type="radio" name="pizza" id="never_t" value="never tried">
+      <label for="never_t">Never Tried</label>
+      <h3>
+      Check Box
+      </h3>
+      <p><input type="checkbox" name="" value="ck">Check this box if you like our service </p>
+      <h3>
+      Text Area
+      </h3>
+      <p>Anything you would like to say?</p>
+      <textarea rows="5" cols="37">
+      </textarea>
+      <h3>
+      I Like
+      </h3>
+      <select name="i_like" size="4" multiple>
+        <option value="mushrooms">mushrooms</option>
+        <option value="apples">apples</option>
+        <option value="olives">olives</option>
+        <option value="corn">corn</option>
+      </select>
+      <h3>
+      Menu
+      </h3>
+      <p>your favorite color? </p> 
+      <select name="color">
+        <option value="red">red</option>
+        <option value="yellow">yellow</option>
+      </select>
+      <h3>
+      Attach file
+      </h3>
+      <input type="file" name="attachedfile" maxlength=50 allow="text/*" >
+      <h3>
+      Buttons
+      </h3>
+      <button type="submit">submit</button>
+      <button type="reset">reset</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
