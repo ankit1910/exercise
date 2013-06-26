@@ -1,59 +1,83 @@
-a:link, a:visited, a:hover  { text-decoration: none;
-                            }
+a:link, a:visited, a:hover
+{
+  text-decoration: none;
+}
+*
+{ 
+  margin-left: 0px;
+  padding-left: 0px;
+  font-family: 'Georgia';
+  font-style: italic;
+  color: black;
+}
 
-
-ul { margin-left: 0px;
-    padding-left: 0px;
+li {  
+       display: inline-block;
+       
       }
 
-li{ 
-    display: inline-block;
-    position: static;
-    background-color: #cfcfcf;
-    border-bottom: solid 1px #6d6d6d;
-    height: 37px;
-    margin-left: 2px;
-    padding-left: 20px;
-    padding-right: 20px;
-    }
+li a 
+{
+  display: inline-block;
+  position: static;
+  background-color: #cfcfcf;
+  border-bottom: solid 1px #6d6d6d;
+  height: 30px;
+  padding-top: 7px;
+  margin-left: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
      
 ul:first-child {
                 margin-left: 0px;
                 }
 
-
-li a {  
-       font-family: Georgia;
-       font-size: 18px;
-       font-style: italic;
-       color: black;
-      }
-
-li:hover  { 
-            background-color: white;
-            border-top: solid 1px black;
-            border-right:solid 1px black;
-            border-left: solid 1px black;
-           }
-
-li:hover li{
-            background-color: white;
-            border: none;
-            border-bottom: solid 1px black;
-            }
-       
-ul li ul li:last-child { border-bottom: 0px;}
-
-ul  ul { 
+ul li ul { 
            display: none;
            padding-top:5px;
            padding-bottom: 5px;
            padding-left: 5px;
-           margin-top: 16px;
-           margin-left: -21px;
+           margin-top: 0px;
+           margin-left: 2px;
            width: 200px;
            border: solid 1px black;
            }
+
+ul li ul li
+{
+width: 180px;
+ border-bottom: solid 1px black;
+}
+
+ul li ul li:last-child
+{
+  border-bottom: none;
+}
+
+li:hover a{ 
+            background-color: white;
+            height: 29px;
+            padding-top: 5px;
+            padding-left: 19px;
+            padding-right: 19px;
+            border-top: solid 1px black;
+            border-right:solid 1px black;
+            border-left: solid 1px black;
+            border-bottom: solid 1px white;
+            }
+
+li:hover li a {
+            background-color: white;
+            padding-top: 10px;
+            border: none;
+            }
+
+/*       
+#last a
+{ border-bottom: none;}
+
+*/
 
 ul li ul a{
            font-size: 14px;
