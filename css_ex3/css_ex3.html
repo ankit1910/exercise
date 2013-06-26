@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>
+    css exercise 3
+  </title>
+  <link rel="stylesheet" type="text/css" href="css_ex3.css">
+</head>
+<body>
+ <div id="header">
+   <div id="pic"></div>
+   <div id="top_text" width= 500px;>
+    <pre>
+      Email us at:<span>sales@vinsol.com </span>      skype:<span>Vinsol</span>
+    </pre>
+  </div>
+ </div>
+  <div id="heading">
+    Please fill the form below
+  </div>
+  <div id="form">
+    <form action="submit.html" method="get">
+      <p>
+        <span>First name</span>
+        <input type="text" name="f_name" />
+      </p>
+      <p> <span>  Last name </span>
+        <input type="text" name="l_name" />
+      </p>
+      <p>
+        <span> Email address</span>
+        <input type="text" name="e_add" />
+      </p>
+      <p>
+        <span>Password</span>
+        <input type="password" name="pass" />
+      </p>
+      <p>
+        <span>Gender</span>
+        <input type="radio" name="sex" id="male" value="m"/>
+         <label for="male">Male</label>
+        <input type="radio" name="sex" id="female" value="f"/>
+         <label for="female">Female</label>
+      </p>
+      <p>
+        <span>Date of birth</span>
+        <select name="dob">
+          <option>DD</option>
+        </select>
+         <select name="dob">
+          <option>MM</option>
+        </select>
+         <select name="dob">
+          <option>YY</option>
+        </select>
+      </p>
+      <p>
+        <span>Address</span>
+        <textarea name="add"></textarea>
+      </p>
+      <p>
+        <button type="submit">Submit Detail</button>
+      </p>
+    </form>
+  </div>
+</body>
+</html>
