@@ -6,14 +6,20 @@
 
   }
 
+#outer
+{
+  position: relative;
+}
+
 #header, #footer 
 {
+  
   background:#b2e7ff;
   width: 1000px;
   font-size:24px;
   text-align:center;
   border-bottom: solid 2px #0ab1ff;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 #navig
@@ -22,7 +28,19 @@
  box-sizing:border-box;
  background-color: #0ab1ff;
  padding: 25px 10px 25px 10px;
- float: left;
+}
+
+#section
+{
+ width: 750px;
+ position: absolute;
+ top: 0px;
+ bottom: 0px;
+ left: 250px;
+ box-sizing:border-box;
+ background-color: #ededed;
+ padding: 25px;
+ font-size: 24px;
 }
 
 #navig #heading
@@ -41,15 +59,7 @@
   font-size: 12px;
 }
 
-#section
-{
- width: 750px;
- box-sizing:border-box;
- background-color: #ededed;
- padding: 25px;
- float: left;
- font-size: 24px;
-}
+
 
 #section #paragraph
 {
@@ -63,13 +73,4 @@
   clear: left;
 }
 
-#section, #navig
-{
-  margin-bottom: -1000px;
-  padding-bottom: 1000px;
-}
 
-#container
-{
-  overflow: hidden;overflow: hidden;
-}
