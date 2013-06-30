@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>javascript exercise 1
+  </title>
+
+<script type="text/javascript">
+
+function checkall(arg,status) 
+{
+  var check_box= new Array(); 
+  check_box= document.getElementsByName(arg);
+ 
+  for (var i=0; i<check_box.length; i++)  
+  {
+   if (check_box[i].type == 'checkbox')   
+   {
+    if(status==true) 
+      {check_box[i].checked = true;}
+    else if(status==false)
+      {check_box[i].checked = false;}
+    else
+      {alert("error")}
+    }
+  }
+}
+
+function checknone(arg)
+ {
+  var check_box= new Array(); 
+  var check_box= document.getElementsByName(arg);
+ 
+  for (var i=0; i<check_box.length; i++)  
+  {
+   if (check_box[i].type == 'checkbox')   
+   {
+    check_box[i].checked = false;
+   }
+  }
+}
+
+</script>
+</head>
+<body>
+  <p>
+  <input type="checkbox" name="color" value="red">RED
+  </p>
+  <p>
+  <input type="checkbox" name="color" value="green">GREEN
+  </p>
+  <p>
+  <input type="checkbox" name="color" value="yellow">YELLOW
+  </p>
+  <p>
+  <input type="checkbox" name="color" value="white">WHITE
+  </p>
+  <p>
+  <input type="checkbox" name="color" value="black">BLACK
+  </p>
+  <p>
+  <a onclick="checkall('color',true)" href="#">check all</a>
+  </p>
+  <p>
+  <a onclick="checkall('color',false)" href="#">check none</a>
+  </p>
+</body>
+</html>
