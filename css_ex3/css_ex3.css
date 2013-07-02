@@ -44,25 +44,25 @@
 	background-color: #ececec;
 	margin-left: 300px;
 	margin-top: 10px;
-    width: 500px;
-    padding: 20px 25px 20px 25px;
-    border: solid 1px #bcbcbc;
+        width: 500px;
+        padding: 20px 25px 20px 25px;
+        border: solid 1px #bcbcbc;
 
 }
 
 #form span
-{   display: inline-block;
+{       display: inline-block;
 	font-size: 14px;
 	vertical-align: top;
 	width: 80px;
-    text-align: right;
-    padding-right: 20px;
+       text-align: right;
+       padding-right: 20px;
 }
 
 
 
 input
-{   display: inline-block;
+{       display: inline-block;
 	background-color: white;
 	border: solid 1px #b9b9b9;
 	width: 360px;
