@@ -6,9 +6,22 @@
 
   }
 
-#outer
+#outer1
 {
+  float: left;
+  width: 1000px;
+  background: #0ab1ff;
+  overflow: hidden;
   position: relative;
+}
+
+#outer2
+{
+  float: left;
+  width: 1000px;
+  background: #ededed;
+  position: relative;
+  left: 250px;
 }
 
 #header, #footer 
@@ -24,21 +37,21 @@
 
 #navig
 {
+ float:left;
  width: 250px;
  box-sizing:border-box;
- background-color: #0ab1ff;
- padding: 25px 10px 25px 10px;
+ position: relative;
+ right: 230px;
+ padding: 25px 30px 25px 10px;
 }
 
 #section
 {
+ float: left;
  width: 750px;
- position: absolute;
- top: 0px;
- bottom: 0px;
- left: 250px;
+ position: relative;
+ right: 250px;
  box-sizing:border-box;
- background-color: #ededed;
  padding: 25px;
  font-size: 24px;
 }
@@ -48,7 +61,7 @@
   font-size: 18px;
 }
 
-#navig #links
+#navig #links a
 {
   font-size: 14px;
   color: white;
