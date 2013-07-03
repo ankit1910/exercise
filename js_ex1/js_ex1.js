@@ -1,29 +1,22 @@
-function check(arg,status)                        // function to check and uncheck all
+
+// function to check and uncheck all
+// arg hold name of checkbox 
+// status hold the boolean value upon which function has to be performed
+function invert_sel(arg,status)                        
 {
-  var check_box= new Array(); 
-  check_box= document.getElementsByName(arg);               
-  if(status==true)                                //for checking all checkbox
+  var check_box = [];
+  var check_box = document.getElementsByName(arg);               
+  //for traversing each child
+  for (var i = 0; i < check_box.length; i++)        
   {
-    for (var i=0; i<check_box.length; i++)        //traversing each child of list
-    {
-      if (check_box[i].type == 'checkbox')   
-      { 
-        check_box[i].checked = true;
-      }
+    //for checking type of nodes
+    if (check_box[i].type == 'checkbox')   
+    { 
+      check_box[i].checked = status;
     }
-  }
-  else if(status==false)                         //for checking all checkbox
-  {
-    for (var i=0; i<check_box.length; i++)       //traversing each child of list
+    else
     {
-      if (check_box[i].type == 'checkbox')   
-      {
-        check_box[i].checked = false;
-      }
-    }
+      alert("error--'checked value out of domain'")
+    }   
   }
-  else
-  {
-    alert("error checked value out of domain")
-  }   
 }
