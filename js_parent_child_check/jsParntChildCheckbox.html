@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title> Parent Child Checkbox
+    </title>
+    <SCRIPT TYPE="text/javascript" src="jsParentChildCheckbox.js"></SCRIPT>
+    <link rel="stylesheet" type="text/css" href="jsParentChildCheckbox.css">
+  </head>
+  <body>
+    <div id="outer">
+      <div id="innerColor1">
+      <input type="checkbox" id="mainColor" onclick="checkAllChild('innerColor')" />
+      <label for="mainColor">COLORS</label><br>
+        <div id="innerColor" class="inner">
+          <input type="checkbox" name="innerColor" id="colorRed" /><label for="colorRed">red</label><br>
+          <input type="checkbox" name="innerColor" id="colorGreen" /><label for="colorGreen">green</label><br>
+          <input type="checkbox" name="innerColor" id="colorYellow" /><label for="colorYellow">yellow</label><br>
+          <input type="checkbox" name="innerColor" id="colorBlue"  /><label for="colorBlue">blue</label><br>
+        </div>
+      </div>
+      <div id="innerMuvie1">
+      <input type="checkbox" id="mainMuvie" onclick="checkAllChild('innerMuvie')" />
+      <label for="mainMuvie">MUVIES</label><br>
+        <div id="innerMuvie" class="inner">
+          <input type="checkbox" name="innerMuvie" id="sirMuvie" /><label for="sirMuvie">sir</label><br>
+          <input type="checkbox" name="innerMuvie" id="dirMuvie" /><label for="dirMuvie">dir</label><br>
+        </div>
+      </div>
+      <div id="innerDrinks1">
+      <input type="checkbox" id="mainDrinks" onclick="checkAllChild('innerDrinks')" />
+      <label for="mainDrinks">DRINKS</label><br>
+        <div id="innerDrinks" class="inner">
+          <input type="checkbox" name="innerDrinks" id="dewDrinks" /><label for="dewDrinks">dew</label><br>
+          <input type="checkbox" name="innerDrinks" id="pepsiDrinks" /><label for="pepsiDrinks">pepsi</label><br>
+          <input type="checkbox" name="innerDrinks" id="cokeDrinks" /><label for="cokeDrinks">coke</label><br>
+        </div>
+      </div>
+      <div id="innerBikes1">
+      <input type="checkbox" id="mainBikes" onclick="checkAllChild('innerBikes')" />
+      <label for="mainBikes">BIKES</label><br>
+      <div id="innerBikes" class="inner">
+        <input type="checkbox" name="innerBikes" id="vrodBikes" /><label for="vrodBikes">v-rod</label><br>
+        <input type="checkbox" name="innerBikes" id="cbzBikes" /><label for="cbzBikes">cbz</label><br>
+        <input type="checkbox" name="innerBikes" id="pulsarBikes" /><label for="pulsarBikes">pulsar</label><br>
+      </div>
+     </div>
+    </div>
+  </body>
+</html>
