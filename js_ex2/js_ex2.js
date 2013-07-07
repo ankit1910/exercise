@@ -1,32 +1,28 @@
-//global variables
-var dispDays = " are ", countSel = 0;
+var dispDays = [];
 // function to max check 3 checkbox
-function checkMax_3(currentCheckBox){
+function checkMax_3(currentCheckBox){  
   if(currentCheckBox.checked == true){
-    countSel++;
     //to check the max limit of checkbox
-    if(countSel == 4){
-      alert("you can't select more than 3 check box.\n you already had seleted:" + dispDays);
+    if(dispDays.length == 3){
       currentCheckBox.checked = false;
+      alert("you can't select more than 3 check box.\n seleted days are:" + dispDays);
+
     }
-    dispDays += currentCheckBox.getAttribute('value');
-    dispDays += " ";
+    var day = currentCheckBox.value;    
+    dispDays.push(day);
   }
   //if the check box is deselected after selecting
   if(currentCheckBox.checked == false){
-    countSel--;
-    var subStr = currentCheckBox.getAttribute('value');
-    dispDays = dispDays.replace(subStr + ' ',"");
+    dispDays.splice(dispDays.indexOf(currentCheckBox.value), 1);
   }
   // deseleting check none checkbox on clicking first element
-  if(countSel == 1){
-    document.getElementsByName('check_none')[0].checked = false;
-  }
+  if(document.getElementById("checknone").checked == true){
+    document.getElementById("checknone").checked = false;
+  }    
 }
 //funtion for deseleting all the checkboxes
 function checknone(){
-  countSel = 0;
-  dispDays = " are ";
+  dispDays = [] ;
   var check_box = document.getElementsByName('color');
   for (var i = 0; i < check_box.length; i++) { 
     //checking currentCheckBoxect is checkbox type or not
