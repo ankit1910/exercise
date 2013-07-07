@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>
+    form validation using js
+  </title>
+  <link rel="stylesheet" type="text/css" href="validate_form.css">
+</head>
+<body>
+  <div id="form">
+    <form id="validate" action="submit.html" method="post">
+      <p align="center">
+        Registration form
+      </p>
+      <div id="main">
+      <p>
+        <span><label for="login">Login id</label></span>
+        <input type="text" id="login" />
+      </p>
+      <p>
+        <span><label for="email">Email</label></span>
+        <input type="text" id="email" />
+      </p>
+      <p>
+        <span><label for="name">name</label></span>
+        <input type="text" id="name" />
+      </p>
+        <span><label for="timezone">timezone</label></span>
+        <select id="timezone">
+          <option>GMT</option>
+        </select>
+      <p>
+        <span><label for="homepage">Home page</label></span>
+        <input type="text" id="homepage" />
+      </p> 
+      <p>
+        <span><label for="aboutme">about me</label></span>
+      </p>
+      <p>
+        <textarea id="aboutme"></textarea>
+      </p>
+      </div>
+      <p>
+        <input type="checkbox" id="notification">Receive notification of comments.
+      </p>
+      <p align="center">
+        <button type="submit">go</button>
+      </p>
+    </form>
+    <script src="validate_form.js"></script>
+  </div>
+</body>
+</html>

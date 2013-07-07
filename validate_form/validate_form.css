@@ -1,0 +1,38 @@
+*
+{   
+  margin-left: 0px;
+  padding-left: 0px;
+ }
+#validate
+{
+	background-color: #DCDCDC;
+	margin-left: 300px;
+	width: 400px;
+  border: solid 1px #bcbcbc;
+  position: relative;
+}
+
+#validate span
+{   
+  margin-left: 10px;
+   margin-right: 100px;
+}
+
+#head{
+	background-color: #DC3030;
+}
+
+#main input
+{   
+  display: inline-block;
+	margin-left: 10px;
+	position: absolute;
+	left: 160px;
+	
+}
+textarea
+{
+	margin-left: 10px;
+	width: 360px;
+	height:135px;
+}
