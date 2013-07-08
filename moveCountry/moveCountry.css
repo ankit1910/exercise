@@ -1,0 +1,25 @@
+#container{
+	width: 400px;
+  margin-left: 200px;
+  border: solid 2px black;
+}
+
+select{
+  width: 150px;
+}
+
+#first_box{
+  float: left;
+}
+
+#second_box, #remove{
+  position: relative;  
+  top: -25px;
+}
+
+input{
+  margin-left: 10px;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+}
