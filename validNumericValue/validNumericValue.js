@@ -3,7 +3,7 @@ var validateForm = document.getElementById('formSubmit');
 validateForm.addEventListener("submit", checkFormValidate);
 
 function checkFormValidate(event){
-	var regex = /^[0-9]+$/;
+  var regex = /^[0-9]+$/;
   if(regex.test(document.getElementById('input').value)) {
     document.getElementById('output').value = 'true';
     alert("submitting form");
