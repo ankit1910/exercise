@@ -3,7 +3,7 @@ var flag, windowDisp = document.getElementById('window');
 windowDisp.addEventListener( "click", createWindow);
 // this function opens a window if the url is not empty...
 function createWindow(){
-	do{
+  do{
     flag = true;
     var url = prompt("enter the url of window","xyz.html");
     if(url == ""){
