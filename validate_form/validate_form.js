@@ -1,6 +1,6 @@
 //defining an object with multiple variables
-var formFields = {
-  validateForm: document.getElementById("validateForm"),
+var validateForm = document.getElementById("validateForm");
+var formFields = {  
   login: document.getElementById("login"),
   email: document.getElementById("email"),
   name:  document.getElementById("name"),
@@ -9,26 +9,32 @@ var formFields = {
   recNotif: document.getElementById("notification")
 }
 //adding event handler
-formFields.validateForm.addEventListener("submit", validFormFields);
+validateForm.addEventListener("submit", validFormFields);
 //regular expressions
-var testEmail = /^[a-z0-9._%-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+var testEmail = /^(?:\w+\.?)*\w+@(?:\w+\.?)*\w{2,4}$/;
 var testHome = /^[a-z0-9._%-]+\.[a-z]{2,4}$/;
 
 //function to validate form
 function validFormFields(e){
   if(formFields.login.value == "" || formFields.login.value.match(" ")) {
     alert("login id is not correct");
-  }  
-	if(formFields.email.value == "" || !testEmail.test(formFields.email.value)){
+  }
+  if(formFields.email.value.trim() == ""){
+    alert("you forgot the email id");
+  }
+  else if(!testEmail.test(formFields.email.value)){
     alert("please check email id");
   }  
-  if(formFields.name.value == "") {
+  if(formFields.name.value.trim() == "") {
     alert("please enter name");
   }
-  if(formFields.homePage.value == "" || !testHome.test(formFields.homePage.value)){
+  if(formFields.homePage.value.trim() == ""){
+    alert("you forgot the home page url");
+  }
+  else if(!testHome.test(formFields.homePage.value)){
     alert("please check homepage url");
   }
-  if (formFields.textArea.value.length <= 50 ) {
+  if (formFields.textArea.value.trim().length <= 50 ) {
     alert("description should be in min 50 words");
   }
   if(formFields.recNotif.checked != true) {
