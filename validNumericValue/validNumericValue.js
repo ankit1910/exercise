@@ -1,6 +1,7 @@
+var regex = /^[-+]?(\d+)\.?(\d+)$/;
+
 function validate(formId) {
   this.validateForm = document.getElementById(formId);
-  var regex = /^[-]?(\d+)\.?(\d+)$/;
   this.checkFormValidate = function(event){
     if(regex.test(document.getElementById('input').value)) {
       document.getElementById('output').value = 'true';
