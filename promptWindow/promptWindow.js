@@ -6,16 +6,12 @@ function createWindow(){
   do{
     flag = true;
     var url = prompt("enter the url of window","xyz.html");
-    if(url == ""){
+    if(url.trim() == "" && url != null){
       alert("please enter url");
       flag = false;
     }
     else{
-      // to check weather user clicked cancel.
-      if(url != null){
       window.open(url, 'new_window', 'width=400px, height=350px, status=no, scrollbars=no, toolbar=no');
-      }
     }
-  }
-  while(flag != true);
+  }while(!flag);
 }
