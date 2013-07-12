@@ -1,4 +1,4 @@
-//defining an object with multiple variables
+
 var validateForm = document.getElementById("validateForm");
 //adding event handler
 validateForm.addEventListener("submit", validFormFields);
@@ -20,3 +20,4 @@ function validFormFields(e){
     alert("are you sure you dont want to recieve notification");
     e.preventDefault();
   }
+}
