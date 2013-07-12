@@ -11,8 +11,9 @@ function checkUrl(formId) {
       if(subDomain == ""){
         alert("Domain name : " + domain );
       }
-      else
+      else{
         alert("Domain name : " + domain + " \n SubDomain :  " + subDomain);
+      }
     }
     else{
       alert("url format is invalid");
