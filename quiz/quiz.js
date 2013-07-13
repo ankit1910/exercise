@@ -5,7 +5,7 @@ var wrongAnswerArray = [];
 window.addEventListener("load", displayQue);
 //function to display the main quiz page
 function displayQue(eventDisp) {
-  if(queNum < 5){
+  if(queNum < 20){
     firstOprand = Math.floor((Math.random()*20)+1);
     secondOprand = Math.floor((Math.random()*20)+1);
     oprator = operatorNeeded[Math.floor(Math.random()*4)];
@@ -81,7 +81,7 @@ function displayWrongAnswers(){
 
 //start the timer
 function startTimer(){
-  timerSec = 10;
+  timerSec = 60;
   timerVar = setInterval(function(){
     document.getElementById('displayTimer').innerHTML = "Timeleft : " + timerSec-- + " sec";
     if(timerSec == -1){
