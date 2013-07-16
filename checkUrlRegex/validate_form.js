@@ -7,26 +7,27 @@ validateForm.addEventListener("submit", validFormFields);
 var formFields = document.getElementsByClassName('field');
 function validFormFields(eNode){
   var flag = true;
-  for(var i = 0; i < 4; i++){
+  for(var i = 0; i < formFields.length ; i++){
     if(formFields[i].value.trim() == ""){
       alert("please check " + formFields[i].id + " field");
-      e.preventDefault();
+      eNode.preventDefault();
       return ;
     }
   }
   //chek field through regex expresssion....
   checkPattern(document.getElementById('email'), reEmail, eNode);
   checkPattern(document.getElementById('homepage'), reUrl, eNode);
-  
 
-  if(document.getElementById('aboutme').value.trim() < 50){
+  if(document.getElementById('aboutme').value.length <= 50){
     alert(" the length of about me field should be atleast 50");
-    e.preventDefault();
+    eNode.preventDefault();
     return ;
   }
   if(!document.getElementById('notification').checked){
-    alert("are you sure you dont want to recieve notification");
-    e.preventDefault();
+    var confirmNotif = confirm("are you sure you dont want to recieve notification");
+    if(!confirmNotif){
+      eNode.preventDefault();
+    }
   }
 }
 function checkPattern(nodeTOcheck, regex, e){
@@ -35,5 +36,3 @@ function checkPattern(nodeTOcheck, regex, e){
     e.preventDefault();
   }
 }
-
-
