@@ -1,15 +1,17 @@
 #container{
-	width: 400px;
+  width: 400px;
   height: 500px;
   border: solid 1px black;
   margin-left: 200px;
 }
+
 #container *{
   width: 98px;
   height: 98px;
   border: solid 1px black;
   float: left;
 }
+
 #dropDown{
   width: 200px;
   margin-top: 80px;
